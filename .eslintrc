@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "plugin:tailwindcss/recommended", 
+    "plugin:react/recommended", 
+    "plugin:react-hooks/recommended", 
+    "plugin:jsx-a11y/recommended",
+    "plugin:@next/next/recommended",
+    "prettier"
+  ],
+  "root": true,
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js"],
+      "parser": "@typescript-eslint/parser"
+    }
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/media-has-caption": "off"
+  }
+}
