@@ -13,12 +13,13 @@ export default async function handler(
 ) {
   if(req.method === 'GET') {
     const {latitude, longitude} = req.query;
-    console.log(latitude, longitude);
+
     if(!latitude || !longitude) {
       return res.status(400).json({
         error: 'Missing latitude or longitude'
       });
     }
+    
     const response: WeatherData = await fetch(`
       https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=pt_br&units=metric&appid=${process.env.API_WEATHER_KEY}
     `)
